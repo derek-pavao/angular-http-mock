@@ -1,4 +1,4 @@
-angular.module('httpMock', [
+angular.module('dd.httpMock', [
 
 ])
     .config([

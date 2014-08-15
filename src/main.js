@@ -32,7 +32,6 @@ angular.module('dd.httpMock', [
 
                             $timeout(function () {
                                 console.warn('Returning a Mocked Request', mockConfig);
-                                debugger;
                                 defer.resolve({data: httpConfig.transformResponse(mockConfig.response)});
                             }, mockConfig.responseTime);
 

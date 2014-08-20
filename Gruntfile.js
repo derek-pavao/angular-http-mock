@@ -16,7 +16,8 @@ module.exports = function (grunt) {
 
         concat: {
             options: {
-                separator: ';'
+                separator: ';',
+                banner: '/*\n' + grunt.file.read('LICENSE') + '*/\n'
             },
             dist: {
                 src: ['src/**/*.js'],

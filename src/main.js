@@ -1,6 +1,4 @@
-angular.module('dd.httpMock', [
-
-])
+angular.module('dd.httpMock', [])
     .config([
         '$provide',
         function ($provide) {
@@ -22,9 +20,6 @@ angular.module('dd.httpMock', [
 
 
                     $delegate = function (httpConfig) {
-                        // if (config.url.indexOf('kraken-service') !== -1) {
-                        //     console.log(config.method, config.url);
-                        // }
 
                         var mockConfig = $httpMock.getConfig(httpConfig.method, httpConfig.url);
                         if (typeof mockConfig !== 'undefined') {
@@ -43,10 +38,7 @@ angular.module('dd.httpMock', [
                     };
 
 
-                    $delegate.get = function (url) {
-                        if (url.indexOf('html') === -1) {
-                            // console.log('url', url);
-                        }
+                    $delegate.get = function () {
                         return oldGet.apply(this, arguments);
                     };
 

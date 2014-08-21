@@ -13,10 +13,10 @@ angular.module('dd.httpMock')
                     responseTime: 750,
                     response: {},
                     transformResponse: function (res) {
-                        return res;
+                        return angular.fromJson(res);
                     },
                     transformRequest: function (req) {
-                        return req;
+                        return angular.toJson(req);
                     }
                 },
 

@@ -6,6 +6,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -32,6 +33,12 @@ module.exports = function (grunt) {
             },
             srcFiles: {
                 src: ['src/**/*.js']
+            }
+        },
+
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
             }
         },
 

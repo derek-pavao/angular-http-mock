@@ -3,19 +3,20 @@ angular.module('dd.httpMock')
         function () {
             "use strict";
 
-            var mockedRequests = {};
-
             var Mock = function (config) {
                 config.response = JSON.stringify(config.response);
+                config.method = config.method.toLowerCase();
 
-                mockedRequests[config.url] = mockedRequests[config.url] || {};
-                mockedRequests[config.url][config.method] = config;
+                Mock.mockedRequests[config.url] = Mock.mockedRequests[config.url] || {};
+                Mock.mockedRequests[config.url][config.method.toLowerCase()] = config;
             };
+
+            Mock.mockedRequests = {};
 
 
             Mock.getConfig = function (method, url) {
                 try {
-                    return mockedRequests[url][method];
+                    return Mock.mockedRequests[url][method.toLowerCase()];
                 } catch (e) {
                     return undefined;
                 }

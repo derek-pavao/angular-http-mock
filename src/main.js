@@ -12,11 +12,11 @@ angular.module('dd.httpMock', [])
                 'Mock',
                 function ($delegate, $httpMock, $q, $timeout, Mock) {
 
-                    var oldGet = $delegate.get;
+                    // var oldGet = $delegate.get;
                     var oldDelegate = $delegate;
-                    var oldPost = $delegate.post;
-                    var oldPut = $delegate.put;
-                    var oldDelete = $delegate.delete;
+                    // var oldPost = $delegate.post;
+                    // var oldPut = $delegate.put;
+                    // var oldDelete = $delegate.delete;
 
 
 

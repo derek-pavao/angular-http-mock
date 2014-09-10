@@ -51,7 +51,29 @@ describe('Mock', function () {
             expect(headersGetter('Cache-Control')).to.equal('no-cache');
 
         });
+    });
 
+    describe('#getResponseTime()', function () {
+
+        it ('should return a random time between min and max if response time is an array', function () {
+            var mockConfig = {
+                responseTime: [300, 310]
+            };
+
+            var responseTime = Mock.getResponseTime(mockConfig.responseTime);
+
+            expect(responseTime).to.be.at.least(300);
+            expect(responseTime).to.be.below(310);
+        });
+
+        it ('should return the value given to it if the value is not an array', function () {
+            var mockConfig = {
+                responseTime: 300
+            };
+
+            var responseTime = Mock.getResponseTime(mockConfig.responseTime);
+            expect(responseTime).to.equal(300);
+        });
     });
 
 

@@ -20,6 +20,17 @@ angular.module('dd.httpMock')
                     }
                 },
 
+
+                getResponseTime: function (responseTime) {
+                    if (responseTime instanceof Array) {
+                        var min = responseTime[0];
+                        var max = responseTime[1];
+                        return Math.floor(Math.random() * (max - min)) + min;
+                    } else {
+                        return responseTime;
+                    }
+                },
+
                 returnHeadersGetter: function (mockConfig) {
 
                     return function (key) {

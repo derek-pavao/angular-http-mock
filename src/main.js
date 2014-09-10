@@ -51,7 +51,7 @@ angular.module('dd.httpMock', [])
                                     successCb(resolveObj);
                                 }
 
-                            }, mockConfig.responseTime);
+                            }, Mock.getResponseTime(mockConfig.responseTime));
 
 
                             defer.promise.success = function (cb) {
